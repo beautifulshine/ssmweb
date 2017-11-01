@@ -10,7 +10,14 @@
      http://www.springframework.org/schema/aop/spring-aop.xsd
      http://www.springframework.org/schema/tx 
      http://www.springframework.org/schema/tx/spring-tx.xsd">
-
+  
+ 	 <import resource="classpath:spring-mvc.xml"/>
+ 	 <!-- 引入属性文件 -->
+ 	 <context:property-placeholder location="classpath:mysqldb.properties"/>
+  	 <!-- 启用spring mvc 注解 -->
+    <context:annotation-config />
+    <!-- 设置使用注解的类所在的jar包 -->
+    <context:component-scan base-package="com.li.controller" />
     <!-- 自动注入 -->
     <context:component-scan base-package="com.li.service.impl" />
     <!-- 加载properties文件  -->

@@ -28,7 +28,7 @@ private PersonService personService;
     public String showPersons(Model model){
         List<Person> persons = personService.loadPersons();
         model.addAttribute("persons", persons);
-        return "showperson";
+        return "showPerson";
     }
 	
 
