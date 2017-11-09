@@ -17,5 +17,12 @@
     <!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
         p:prefix="/WEB-INF/pages/" p:suffix=".jsp" />
-        
+    
+    <!--200*1024*1024即200M resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->  
+	 <bean id="multipartResolver"  
+	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
+	    <property name="maxUploadSize" value="209715200" />     
+	    <property name="defaultEncoding" value="UTF-8" />  
+	    <property name="resolveLazily" value="true" />  
+	 </bean>  
 </beans>
