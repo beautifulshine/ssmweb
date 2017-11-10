@@ -41,7 +41,7 @@ public class FileController {
         return "success";  //上传成功则跳转至此success.jsp页面  
     }  
     
-    /** 定位到上传多个文件界面 /hello/uploadMulti**/    
+    /** 定位到上传多个文件界面 /hello/uploadMulti**/   
     @RequestMapping(value="/uploadMulti", method=RequestMethod.GET)  
     public String showUploadPage2(){      
         return "uploadMultifile";        //view文件夹下的上传多个文件的页面  
@@ -52,7 +52,7 @@ public class FileController {
      * @param multiRequest 
      * @return 
      * @throws IOException 
-     */  
+     */
    @RequestMapping(value="/doMultiUpload", method=RequestMethod.POST)  
     public String doUploadFile2(MultipartHttpServletRequest multiRequest) throws IOException{  
 
@@ -61,7 +61,7 @@ public class FileController {
             String fileName =filesNames.next();  
             MultipartFile file =  multiRequest.getFile(fileName);  
             if(!file.isEmpty()){  
-                log.debug("Process file: {}", file.getOriginalFilename());  
+//                log.debug("Process file: {}", file.getOriginalFilename());  
                 FileUtils.copyInputStreamToFile(file.getInputStream(), new File("d:\\temp\\imooc\\",   
                         System.currentTimeMillis()+ file.getOriginalFilename()));  
             }  
@@ -69,6 +69,4 @@ public class FileController {
         }  
         return "success";  
     }  
-    
-    
 }

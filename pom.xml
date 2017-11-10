@@ -8,6 +8,7 @@
     <name>maven-ssm-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
+   		 <jdk.version>1.7</jdk.version>
         <!-- spring版本号 -->
         <spring.version>4.0.2.RELEASE</spring.version>
     </properties>
@@ -139,10 +140,25 @@
 		    <artifactId>commons-io</artifactId>
 		    <version>2.4</version>
 		</dependency>
-		
-		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>servlet-api</artifactId>
+		    <version>2.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jsp-api</artifactId>
+		    <version>2.0</version>
+		    <scope>provided</scope>
+		</dependency>
+
     </dependencies>
     <build>
         <finalName>maven-ssm-web</finalName>
     </build>
+    
 </project>
