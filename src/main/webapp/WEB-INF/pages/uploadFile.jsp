@@ -14,7 +14,25 @@
 <form method="post" action="./doUpload" enctype="multipart/form-data">  
 <input type="file" name="file"/>  
 <button type="submit" >提交</button>  
-</form>  
+</form> 
+
+<form name="serForm" action="./fileUpload" method="post"  enctype="multipart/form-data">
+<h1>采用流的方式上传文件</h1>
+<input type="file" name="file">
+<input type="submit" value="upload"/>
+</form>
+ 
+<form name="Form2" action="./fileUpload2" method="post"  enctype="multipart/form-data">
+<h1>采用multipart提供的file.transfer方法上传文件</h1>
+<input type="file" name="file">
+<input type="submit" value="upload"/>
+</form>
+ 
+<form name="Form2" action="./springUpload" method="post"  enctype="multipart/form-data">
+<h1>使用spring mvc提供的类的方法上传文件</h1>
+<input type="file" name="file">
+<input type="submit" value="upload"/>
+</form> 
 </div>  
 </body>  
 </html>  
